@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Diet Tracking App — native iOS beslenme takip uygulaması. G-Wolf Interactive." />
+  <title>Diet Tracking App | G-Wolf Interactive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="page-detail" data-nav="projeler" data-i18n-title="diet.metaTitle" data-i18n-desc="diet.metaDesc">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="site-header scrolled" id="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" data-i18n-aria="logo.aria" aria-label="G-Wolf Interactive Anasayfa">
+        <img src="../assets/logo.png" alt="G-Wolf Interactive" class="logo-img" width="160" height="160" />
+      </a>
+      <div class="header-right">
+        <nav class="main-nav" id="mainNav" data-i18n-aria="nav.mainAria" aria-label="Ana menü">
+          <a href="../index.html#anasayfa" class="nav-link" data-i18n="nav.home">Anasayfa</a>
+          <a href="../index.html#hizmetler" class="nav-link" data-i18n="nav.services">Hizmetler</a>
+          <a href="../index.html#projeler" class="nav-link active" data-i18n="nav.projects">Projeler</a>
+          <a href="../index.html#iletisim" class="nav-link" data-i18n="nav.contact">İletişim</a>
+        </nav>
+        <div class="lang-switcher" id="langSwitcher"></div>
+        <button class="nav-toggle" id="navToggle" data-i18n-aria="nav.menuOpen" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="detail">
+      <div class="detail-hero">
+        <div class="container">
+          <a href="../index.html#projeler" class="back-link reveal" data-i18n="common.backProjects">← Projeler</a>
+          <p class="detail-eyebrow reveal" data-i18n="diet.eyebrow">Proje · Native iOS</p>
+          <h1 class="detail-title reveal" data-i18n="diet.title">Diet Tracking App</h1>
+          <p class="detail-lead reveal" data-i18n="diet.lead">
+            Kalori, makro ve öğün takibini sadeleştiren native iOS uygulaması.
+            SwiftUI arayüzü, HealthKit entegrasyonu ve offline-first veri katmanı.
+          </p>
+        </div>
+        <div class="detail-cover reveal">
+          <img src="../assets/project-diet-tracking.png" data-i18n-alt="diet.imgAlt" alt="Diet Tracking App iOS ekran görüntüsü" width="1280" height="720" />
+        </div>
+      </div>
+
+      <div class="container detail-body">
+        <section class="detail-block reveal">
+          <h2 data-i18n="diet.summaryTitle">Özet</h2>
+          <p data-i18n="diet.summary">
+            Diet Tracking App, günlük beslenme hedeflerini tek bakışta görünür kılmak için
+            tasarlandı. Kullanıcı öğün ekler, makro dağılımını takip eder ve Apple Health
+            ile aktivite verisini birleştirir. Ürün odaklı yaklaşımımız: minimum sürtünme,
+            maksimum netlik — her ekran bir karar anına hizmet eder.
+          </p>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2 data-i18n="diet.featuresTitle">Öne çıkan özellikler</h2>
+          <ul class="check-list">
+            <li data-i18n="diet.f1">Günlük kalori halkası ve makro panelleri</li>
+            <li data-i18n="diet.f2">Hızlı öğün ekleme ve özel besin kayıtları</li>
+            <li data-i18n="diet.f3">HealthKit ile adım / aktif enerji senkronu</li>
+            <li data-i18n="diet.f4">Offline kayıt, senkronizasyon kuyruğu</li>
+            <li data-i18n="diet.f5">Dark mode ve Dynamic Type desteği</li>
+          </ul>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2 data-i18n="diet.techTitle">Teknoloji</h2>
+          <ul class="tech-list">
+            <li>Swift 5.9+, SwiftUI</li>
+            <li>HealthKit, Combine</li>
+            <li>Core Data / SwiftData</li>
+            <li>MVVM mimarisi, unit &amp; UI testleri</li>
+            <li>App Store Connect, TestFlight pipeline</li>
+          </ul>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2 data-i18n="diet.processTitle">Süreç</h2>
+          <p data-i18n="diet.process">
+            Keşif ve kullanıcı akışları → SwiftUI prototip → HealthKit izin modeli →
+            beta (TestFlight) → metrik odaklı iterasyon. Bu şablon, native iOS ürün
+            teslimatımızın referans yapısıdır; benzer health &amp; lifestyle uygulamalarına
+            uyarlanabilir.
+          </p>
+        </section>
+
+        <div class="detail-cta reveal">
+          <p data-i18n="diet.cta">Benzer bir native iOS ürünü konuşmak ister misiniz?</p>
+          <a href="../index.html#iletisim" class="btn btn-primary" data-i18n="common.contactCta">İletişime geçin</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo" data-i18n-aria="logo.aria">
+          <img src="../assets/logo.png" alt="G-Wolf Interactive" class="logo-img logo-img--footer" width="200" height="200" />
+        </a>
+        <p data-i18n="footer.tagline">Gray Wolf Interactive — mobil uygulama ve oyun teknolojileri.</p>
+      </div>
+      <nav class="footer-nav" data-i18n-aria="nav.footerAria" aria-label="Footer menü">
+        <a href="../index.html#anasayfa" data-i18n="nav.home">Anasayfa</a>
+        <a href="../index.html#hizmetler" data-i18n="nav.services">Hizmetler</a>
+        <a href="../index.html#projeler" data-i18n="nav.projects">Projeler</a>
+        <a href="../index.html#iletisim" data-i18n="nav.contact">İletişim</a>
+      </nav>
+      <p class="footer-copy">&copy; <span id="year"></span> <span data-i18n="footer.copy">G-Wolf Interactive. Tüm hakları saklıdır.</span></p>
+    </div>
+  </footer>
+
+  <script src="../i18n.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+backend:
+  # Vercel üzerinde Decap için GitHub backend kullanın.
+  name: github
+  repo: GwolfInteractive/graywolf-interactive
+  branch: main
+
+# Yerel içerik düzenleme (npx decap-server ile):
+local_backend: true
+
+site_url: https://gwolfinteractive.com
+display_url: https://gwolfinteractive.com
+logo_url: /assets/logo.png
+
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: hizmetler
+    label: Hizmetler
+    label_singular: Hizmet
+    folder: content/hizmetler
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Başlık", name: title, widget: string }
+      - { label: "Slug", name: slug, widget: string, hint: "Örn: saas, mobil-uygulama" }
+      - { label: "Özet", name: summary, widget: text }
+      - { label: "Kapak Görseli", name: cover, widget: image, required: false }
+      - { label: "Sıra", name: order, widget: number, required: false, value_type: int }
+      - { label: "Yayında", name: published, widget: boolean, default: true }
+      - { label: "İçerik", name: body, widget: markdown }
+
+  - name: projeler
+    label: Projeler
+    label_singular: Proje
+    folder: content/projeler
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Başlık", name: title, widget: string }
+      - { label: "Slug", name: slug, widget: string, hint: "Örn: diet-tracking-app" }
+      - { label: "Etiket", name: tag, widget: string, required: false }
+      - { label: "Özet", name: summary, widget: text }
+      - { label: "Kapak Görseli", name: cover, widget: image, required: false }
+      - { label: "Platform", name: platform, widget: string, required: false }
+      - { label: "Yayında", name: published, widget: boolean, default: true }
+      - { label: "İçerik", name: body, widget: markdown }
+
+  - name: duyurular
+    label: Duyurular
+    label_singular: Duyuru
+    folder: content/duyurular
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Başlık", name: title, widget: string }
+      - { label: "Tarih", name: date, widget: datetime }
+      - { label: "Özet", name: summary, widget: text, required: false }
+      - { label: "Yayında", name: published, widget: boolean, default: true }
+      - { label: "İçerik", name: body, widget: markdown }

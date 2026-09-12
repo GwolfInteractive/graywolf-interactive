@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="G-Wolf Interactive — Mobil uygulama ve mobil oyun teknolojileri." />
+  <title>G-Wolf Interactive | Mobil Uygulama & Oyun Teknolojileri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-i18n-title="meta.title" data-i18n-desc="meta.description">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="cine-layer cine-streaks" aria-hidden="true"></div>
+  <div class="cine-layer cine-particles" id="cineParticles" aria-hidden="true"></div>
+
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="#anasayfa" class="logo" data-i18n-aria="logo.aria" aria-label="G-Wolf Interactive Anasayfa">
+        <img src="assets/logo.png" alt="G-Wolf Interactive" class="logo-img" width="160" height="160" />
+      </a>
+
+      <div class="header-right">
+        <nav class="main-nav" id="mainNav" data-i18n-aria="nav.mainAria" aria-label="Ana menü">
+          <a href="#anasayfa" class="nav-link active" data-i18n="nav.home">Anasayfa</a>
+          <a href="#hizmetler" class="nav-link" data-i18n="nav.services">Hizmetler</a>
+          <a href="#projeler" class="nav-link" data-i18n="nav.projects">Projeler</a>
+          <a href="#iletisim" class="nav-link" data-i18n="nav.contact">İletişim</a>
+        </nav>
+
+        <div class="lang-switcher" id="langSwitcher"></div>
+
+        <button class="nav-toggle" id="navToggle" data-i18n-aria="nav.menuOpen" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mainNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="anasayfa">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orb hero-orb--1"></div>
+        <div class="hero-orb hero-orb--2"></div>
+        <div class="phone-stage" id="phoneStage">
+          <div class="phone phone--left" data-phone="left"></div>
+          <div class="phone phone--center" data-phone="center"></div>
+          <div class="phone phone--right" data-phone="right"></div>
+        </div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="logo-stage reveal" id="logoStage">
+          <img src="assets/logo.png" alt="G-Wolf Interactive" class="hero-logo" width="420" height="420" />
+          <span class="logo-eye logo-eye--cyan" aria-hidden="true"></span>
+          <span class="logo-eye logo-eye--coral" aria-hidden="true"></span>
+          <img src="assets/wolf-left.png" alt="" class="wolf-sprite wolf-sprite--left" />
+          <img src="assets/wolf-center.png" alt="" class="wolf-sprite wolf-sprite--center" />
+          <img src="assets/wolf-right.png" alt="" class="wolf-sprite wolf-sprite--right" />
+          <div class="logo-emerge-glow"></div>
+        </div>
+        <h1 class="hero-title reveal" data-i18n="hero.title" data-i18n-html>Mobil Uygulama ve<br />Mobil Oyun Teknolojileri</h1>
+        <p class="hero-subtitle reveal" data-i18n="hero.subtitle">
+          Gray Wolf Interactive olarak mobil deneyimleri tasarlıyor,
+          geliştiriyor ve ölçekliyoruz.
+        </p>
+        <a href="#projeler" class="btn btn-primary reveal" data-i18n="hero.cta">Projelerimizi İnceleyin</a>
+      </div>
+    </section>
+
+    <div class="section-banner reveal" aria-hidden="true">
+      <img src="assets/wolves-emerge.png" alt="" class="section-banner-img" loading="lazy" />
+    </div>
+
+    <section class="services" id="hizmetler">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 data-i18n="services.title">Hizmetler</h2>
+          <p data-i18n="services.subtitle">Ürün odaklı mühendislik: SaaS, mobil, oyun ve web — fikirden production’a.</p>
+        </div>
+
+        <div class="services-grid">
+          <a href="hizmetler/saas.html" class="service-card service-card--link reveal" data-tilt>
+            <div class="service-card-media media-3d">
+              <img src="assets/service-saas.png" alt="" width="640" height="360" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 data-i18n="services.saas.title">SaaS Uygulamaları</h3>
+              <p data-i18n="services.saas.desc">Abonelik tabanlı ürünler için ölçeklenebilir mimari, multi-tenant altyapı ve ölçülebilir büyüme.</p>
+              <span class="card-cta"><span data-i18n="services.cta">Detayı gör</span> <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a href="hizmetler/mobil-uygulama.html" class="service-card service-card--link reveal" data-tilt>
+            <div class="service-card-media media-3d">
+              <img src="assets/service-mobile-app.png" alt="" width="640" height="360" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 data-i18n="services.mobile.title">Mobil Uygulama</h3>
+              <p data-i18n="services.mobile.desc">Native iOS/Android ve cross-platform ile App Store kalitesinde performans ve kullanıcı deneyimi.</p>
+              <span class="card-cta"><span data-i18n="services.cta">Detayı gör</span> <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a href="hizmetler/mobil-oyun.html" class="service-card service-card--link reveal" data-tilt>
+            <div class="service-card-media media-3d">
+              <img src="assets/service-mobile-game.png" alt="" width="640" height="360" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 data-i18n="services.game.title">Mobil Oyun Geliştirme</h3>
+              <p data-i18n="services.game.desc">Akıcı oynanış, canlı operasyon ve monetizasyon döngüleriyle sürdürülebilir mobil oyun ürünleri.</p>
+              <span class="card-cta"><span data-i18n="services.cta">Detayı gör</span> <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+
+          <a href="hizmetler/web-gelistirme.html" class="service-card service-card--link reveal" data-tilt>
+            <div class="service-card-media media-3d">
+              <img src="assets/service-web.png" alt="" width="640" height="360" loading="lazy" />
+            </div>
+            <div class="service-card-body">
+              <h3 data-i18n="services.web.title">Web Geliştirme</h3>
+              <p data-i18n="services.web.desc">Hızlı, erişilebilir ve SEO’ya hazır web ürünleri — landing’den kompleks dashboard’lara.</p>
+              <span class="card-cta"><span data-i18n="services.cta">Detayı gör</span> <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-banner section-banner--glow reveal" aria-hidden="true">
+      <img src="assets/section-glow.png" alt="" class="section-banner-img" loading="lazy" />
+    </div>
+
+    <section class="projects" id="projeler">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 data-i18n="projects.title">Projeler</h2>
+          <p data-i18n="projects.subtitle">Seçili ürün çalışmalarımızdan bir kesit.</p>
+        </div>
+
+        <div class="projects-grid">
+          <a href="projeler/diet-tracking-app.html" class="project-card reveal" data-tilt>
+            <div class="project-card-media media-3d">
+              <img src="assets/project-diet-tracking.png" data-i18n-alt="projects.diet.imgAlt" alt="Diet Tracking App ekran görüntüsü" width="800" height="450" loading="lazy" />
+            </div>
+            <div class="project-card-body">
+              <span class="project-tag" data-i18n="projects.diet.tag">Native iOS</span>
+              <h3 data-i18n="projects.diet.title">Diet Tracking App</h3>
+              <p data-i18n="projects.diet.desc">Kalori, makro ve öğün takibini sadeleştiren native iOS uygulaması — HealthKit entegrasyonu ve SwiftUI arayüzü.</p>
+              <span class="card-cta"><span data-i18n="projects.diet.cta">Projeyi incele</span> <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+      <div class="container contact-inner">
+        <div class="section-head reveal">
+          <h2 data-i18n="contact.title">İletişim</h2>
+          <p data-i18n="contact.subtitle">Projenizi konuşalım. Kısa bir not bırakın, ekibimiz size dönüş yapsın.</p>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-i18n="contact.name">Ad Soyad</label>
+              <input type="text" id="name" name="name" autocomplete="name" required data-i18n-placeholder="contact.namePh" placeholder="Adınız" />
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="contact.email">E-posta</label>
+              <input type="email" id="email" name="email" autocomplete="email" required data-i18n-placeholder="contact.emailPh" placeholder="ornek@email.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="contact.message">Mesaj</label>
+            <textarea id="message" name="message" rows="5" required data-i18n-placeholder="contact.messagePh" placeholder="Projeniz veya talebiniz hakkında kısaca yazın..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.submit">Gönder</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#anasayfa" class="logo" data-i18n-aria="logo.aria" aria-label="G-Wolf Interactive Anasayfa">
+          <img src="assets/logo.png" alt="G-Wolf Interactive" class="logo-img logo-img--footer" width="200" height="200" />
+        </a>
+        <p data-i18n="footer.tagline">Gray Wolf Interactive — mobil uygulama ve oyun teknolojileri.</p>
+      </div>
+      <nav class="footer-nav" data-i18n-aria="nav.footerAria" aria-label="Footer menü">
+        <a href="#anasayfa" data-i18n="nav.home">Anasayfa</a>
+        <a href="#hizmetler" data-i18n="nav.services">Hizmetler</a>
+        <a href="#projeler" data-i18n="nav.projects">Projeler</a>
+        <a href="#iletisim" data-i18n="nav.contact">İletişim</a>
+      </nav>
+      <p class="footer-copy">&copy; <span id="year"></span> <span data-i18n="footer.copy">G-Wolf Interactive. Tüm hakları saklıdır.</span></p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
