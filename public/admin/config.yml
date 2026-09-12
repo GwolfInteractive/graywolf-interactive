@@ -35,20 +35,103 @@ collections:
   - name: projeler
     label: Projeler
     label_singular: Proje
+    description: >-
+      Yeni kayıt = sitede yeni /projeler/slug sayfası. Türkçe alanlar yeterli;
+      EN/DE/ES boşsa Türkçe görünür. Kapak 16:9 yükle. Yayınla → Git commit →
+      Vercel deploy → sayfa açılır.
     folder: content/projeler
     create: true
     slug: "{{slug}}"
+    identifier_field: slug
     extension: md
     format: frontmatter
+    summary: "{{title}} — {{status}}"
     fields:
-      - { label: "Başlık", name: title, widget: string }
-      - { label: "Slug", name: slug, widget: string, hint: "Örn: diet-tracking-app" }
-      - { label: "Etiket", name: tag, widget: string, required: false }
-      - { label: "Özet", name: summary, widget: text }
-      - { label: "Kapak Görseli", name: cover, widget: image, required: false }
-      - { label: "Platform", name: platform, widget: string, required: false }
-      - { label: "Yayında", name: published, widget: boolean, default: true }
-      - { label: "İçerik", name: body, widget: markdown }
+      - { label: "Başlık (TR)", name: title, widget: string, hint: "Sitede görünen ad" }
+      - { label: "Slug", name: slug, widget: string, hint: "URL: /projeler/bu-yazi. Örn: diet-tracking-app. Boşluk yok." }
+      - label: Durum
+        name: status
+        widget: select
+        options:
+          - { label: "Internal MVP", value: mvp }
+          - { label: "Konsept / Yakında", value: concept }
+          - { label: "Yayında", value: live }
+        default: concept
+        hint: "Diet = MVP. Henüz çıkmamış stüdyo işi = Konsept. Mağazada / canlı müşteri = Yayında."
+      - { label: "Etiket (TR)", name: tag, widget: string, required: false, hint: "Örn: Native iOS, SaaS, Mobil oyun" }
+      - { label: "Platform", name: platform, widget: string, required: false, hint: "Örn: iOS, Web, iOS / Android" }
+      - { label: "Yıl", name: year, widget: string, required: false }
+      - { label: "Sıra", name: order, widget: number, required: false, value_type: int, hint: "Küçük sayı önce. 1 = anasayfada büyük kart." }
+      - { label: "Yayında", name: published, widget: boolean, default: true, hint: "Kapalıysa sitede görünmez." }
+      - { label: "Kapak görseli", name: cover, widget: image, required: true, hint: "16:9, en az 1280px geniş. public/assets/uploads içine yüklenir." }
+      - label: Galeri
+        name: gallery
+        widget: list
+        required: false
+        hint: "İsteğe bağlı ek ekranlar / görseller. Boş bırakılabilir."
+        field: { label: Görsel, name: image, widget: image }
+      - { label: "Giriş cümlesi (TR)", name: lead, widget: text, hint: "Başlığın altındaki kısa satış / durum cümlesi." }
+      - { label: "Özet (TR)", name: summary, widget: text, hint: "Kartta ve detayda görünen paragraf." }
+      - { label: "SEO açıklaması (TR)", name: metaDesc, widget: text, required: false }
+      - label: Öne çıkanlar (TR)
+        name: highlights
+        widget: list
+        required: false
+        hint: "Pakette / üründe ne var — kısa maddeler."
+        field: { label: Madde, name: item, widget: string }
+      - label: Teknoloji
+        name: tech
+        widget: list
+        required: false
+        field: { label: Satır, name: item, widget: string }
+      - { label: "Süreç (TR)", name: process, widget: text, required: false }
+      - { label: "İletişim cümlesi (TR)", name: cta, widget: string, required: false }
+      - { label: "Hikâye (TR)", name: body, widget: markdown, hint: "Detay sayfasındaki uzun metin. Paragrafları boş satırla ayırın." }
+      - label: İngilizce (opsiyonel)
+        name: en
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: Başlık, name: title, widget: string, required: false }
+          - { label: Etiket, name: tag, widget: string, required: false }
+          - { label: Giriş, name: lead, widget: text, required: false }
+          - { label: Özet, name: summary, widget: text, required: false }
+          - { label: SEO, name: metaDesc, widget: text, required: false }
+          - { label: Öne çıkanlar, name: highlights, widget: list, required: false, field: { label: Madde, name: item, widget: string } }
+          - { label: Süreç, name: process, widget: text, required: false }
+          - { label: CTA, name: cta, widget: string, required: false }
+          - { label: Hikâye, name: story, widget: text, required: false }
+      - label: Almanca (opsiyonel)
+        name: de
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: Titel, name: title, widget: string, required: false }
+          - { label: Etiket, name: tag, widget: string, required: false }
+          - { label: Giriş, name: lead, widget: text, required: false }
+          - { label: Özet, name: summary, widget: text, required: false }
+          - { label: SEO, name: metaDesc, widget: text, required: false }
+          - { label: Öne çıkanlar, name: highlights, widget: list, required: false, field: { label: Madde, name: item, widget: string } }
+          - { label: Süreç, name: process, widget: text, required: false }
+          - { label: CTA, name: cta, widget: string, required: false }
+          - { label: Hikâye, name: story, widget: text, required: false }
+      - label: İspanyolca (opsiyonel)
+        name: es
+        widget: object
+        collapsed: true
+        required: false
+        fields:
+          - { label: Título, name: title, widget: string, required: false }
+          - { label: Etiket, name: tag, widget: string, required: false }
+          - { label: Giriş, name: lead, widget: text, required: false }
+          - { label: Özet, name: summary, widget: text, required: false }
+          - { label: SEO, name: metaDesc, widget: text, required: false }
+          - { label: Öne çıkanlar, name: highlights, widget: list, required: false, field: { label: Madde, name: item, widget: string } }
+          - { label: Süreç, name: process, widget: text, required: false }
+          - { label: CTA, name: cta, widget: string, required: false }
+          - { label: Hikâye, name: story, widget: text, required: false }
 
   - name: duyurular
     label: Duyurular

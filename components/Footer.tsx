@@ -11,7 +11,7 @@ export default function Footer({ variant = "home" }: FooterProps) {
   const { t } = useI18n();
   const year = new Date().getFullYear();
   const home = variant === "home";
-  const href = (hash: string) => (home ? hash : `/${hash}`);
+  const href = (id: string) => (home ? `#${id}` : `/#${id}`);
   const logoHref = home ? "#anasayfa" : "/";
 
   return (
@@ -41,16 +41,19 @@ export default function Footer({ variant = "home" }: FooterProps) {
           data-i18n-aria="nav.footerAria"
           aria-label={t("nav.footerAria")}
         >
-          <a href={href("#anasayfa")} data-i18n="nav.home">
+          <a href={href("anasayfa")} data-i18n="nav.home">
             Anasayfa
           </a>
-          <a href={href("#hizmetler")} data-i18n="nav.services">
-            Hizmetler
-          </a>
-          <a href={href("#projeler")} data-i18n="nav.projects">
+          <Link href="/biz-kimiz" data-i18n="nav.about">
+            Biz Kimiz
+          </Link>
+          <Link href="/hizmetler" data-i18n="nav.services">
+            Hizmetlerimiz
+          </Link>
+          <Link href="/projeler" data-i18n="nav.projects">
             Projeler
-          </a>
-          <a href={href("#iletisim")} data-i18n="nav.contact">
+          </Link>
+          <a href={href("iletisim")} data-i18n="nav.contact">
             İletişim
           </a>
         </nav>

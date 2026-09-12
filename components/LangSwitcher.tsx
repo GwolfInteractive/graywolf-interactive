@@ -1,8 +1,17 @@
 "use client";
 
-import { FLAG_SVG, LANG_LABELS, SUPPORTED, useI18n } from "@/components/providers/I18nProvider";
+import {
+  FLAG_SVG,
+  LANG_LABELS,
+  SUPPORTED,
+  useI18n,
+} from "@/components/providers/I18nProvider";
 
-export default function LangSwitcher() {
+type LangSwitcherProps = {
+  onChange?: () => void;
+};
+
+export default function LangSwitcher({ onChange }: LangSwitcherProps) {
   const { lang, setLang, t } = useI18n();
 
   return (
@@ -21,7 +30,10 @@ export default function LangSwitcher() {
           aria-label={LANG_LABELS[code]}
           aria-pressed={lang === code}
           title={LANG_LABELS[code]}
-          onClick={() => setLang(code)}
+          onClick={() => {
+            setLang(code);
+            onChange?.();
+          }}
         >
           <span
             className="lang-glass"

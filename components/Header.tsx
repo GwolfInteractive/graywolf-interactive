@@ -7,7 +7,7 @@ import { useI18n } from "@/components/providers/I18nProvider";
 
 type HeaderProps = {
   variant?: "home" | "detail";
-  activeNav?: "hizmetler" | "projeler" | null;
+  activeNav?: "hizmetler" | "projeler" | "about" | null;
 };
 
 export default function Header({
@@ -59,10 +59,13 @@ export default function Header({
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  const href = (hash: string) => (home ? hash : `/${hash}`);
+  const href = (id: string) => (home ? `#${id}` : `/#${id}`);
   const logoHref = home ? "#anasayfa" : "/";
 
   const navClass = (id: string) => {
+    if (id === "about") {
+      return `nav-link${activeNav === "about" ? " active" : ""}`;
+    }
     if (!home) {
       if (activeNav === "hizmetler" && id === "hizmetler") return "nav-link active";
       if (activeNav === "projeler" && id === "projeler") return "nav-link active";
@@ -100,31 +103,39 @@ export default function Header({
             aria-label={t("nav.mainAria")}
           >
             <a
-              href={href("#anasayfa")}
+              href={href("anasayfa")}
               className={navClass("anasayfa")}
               data-i18n="nav.home"
               onClick={() => setNavOpen(false)}
             >
               Anasayfa
             </a>
-            <a
-              href={href("#hizmetler")}
+            <Link
+              href="/biz-kimiz"
+              className={navClass("about")}
+              data-i18n="nav.about"
+              onClick={() => setNavOpen(false)}
+            >
+              Biz Kimiz
+            </Link>
+            <Link
+              href="/hizmetler"
               className={navClass("hizmetler")}
               data-i18n="nav.services"
               onClick={() => setNavOpen(false)}
             >
-              Hizmetler
-            </a>
-            <a
-              href={href("#projeler")}
+              Hizmetlerimiz
+            </Link>
+            <Link
+              href="/projeler"
               className={navClass("projeler")}
               data-i18n="nav.projects"
               onClick={() => setNavOpen(false)}
             >
               Projeler
-            </a>
+            </Link>
             <a
-              href={href("#iletisim")}
+              href={href("iletisim")}
               className={navClass("iletisim")}
               data-i18n="nav.contact"
               onClick={() => setNavOpen(false)}
@@ -133,7 +144,7 @@ export default function Header({
             </a>
           </nav>
 
-          <LangSwitcher />
+          <LangSwitcher onChange={() => setNavOpen(false)} />
 
           <button
             className="nav-toggle"

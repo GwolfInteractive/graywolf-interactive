@@ -56,7 +56,7 @@ export default function DetailPage({
           <div className="detail-hero">
             <div className="container">
               <Link href={backHref} className="back-link reveal" data-i18n={backKey}>
-                {kind === "service" ? "← Hizmetler" : "← Projeler"}
+                {kind === "service" ? "← Hizmetlerimiz" : "← Projeler"}
               </Link>
               <p className="detail-eyebrow reveal" data-i18n={eyebrowKey}>
                 {kind === "service" ? "Hizmet" : "Proje"}

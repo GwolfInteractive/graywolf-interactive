@@ -32,7 +32,14 @@ npx decap-server
 # Admin: http://localhost:3000/admin/
 ```
 
-`public/admin/config.yml` içindeki `repo:` değerini kendi GitHub reponuza güncelleyin.
+İletişim formu için `.env.local` (Vercel’de de aynı env’ler):
+
+```bash
+RESEND_API_KEY=re_...
+CONTACT_EMAIL=hello@gwolfinteractive.com
+```
+
+Anahtar yoksa form gönderimi 503 döner.
 
 ## Vercel + gwolfinteractive.com
 
@@ -66,9 +73,14 @@ Sadece web için A/CNAME güncelleyin; e-posta DNS’i olduğu gibi kalsın.
 | Eski | Yeni |
 |------|------|
 | `index.html` | `/` |
+| — | `/hizmetler` |
 | `hizmetler/saas.html` | `/hizmetler/saas` |
 | `hizmetler/mobil-uygulama.html` | `/hizmetler/mobil-uygulama` |
 | `hizmetler/mobil-oyun.html` | `/hizmetler/mobil-oyun` |
 | `hizmetler/web-gelistirme.html` | `/hizmetler/web-gelistirme` |
+| — | `/projeler` |
 | `projeler/diet-tracking-app.html` | `/projeler/diet-tracking-app` |
+| — | `/projeler/northline-ops` |
+| — | `/projeler/aether-rush` |
+| — | `/biz-kimiz` |
 | — | `/admin/` (Decap CMS) |
