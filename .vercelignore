@@ -1,0 +1,6 @@
+# Only skip the leftover repo-root copies. Next.js serves public/assets.
+/assets
+/_legacy
+/Logo.png
+/.next
+/node_modules
